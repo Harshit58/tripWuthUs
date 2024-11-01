@@ -232,6 +232,10 @@ function sortHotelsByReviewsAscendingOrder(hotel1, hotel2) {
   return hotel1.reviews - hotel2.reviews;
 }
 
+app.get('/hotels', (req, res) => {
+  res.json({ hotels: hotels });
+});
+
 app.get('/hotels/sort/reviews', (req, res) => {
   let reviews = req.query.reviews;
   let hotelsCopy = hotels.slice();
